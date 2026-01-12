@@ -3,9 +3,9 @@ import os, json, base64, urllib.request
 
 app = FastAPI()
 
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-REPO = os.environ.get("GITHUB_REPO")
-SAVE_KEY = (os.environ.get("SAVE_KEY") or "").encode()
+GITHUB_TOKEN = os.environ.get("github_personal_access_token")
+REPO = os.environ.get("saves_repo")
+SAVE_KEY = (os.environ.get("AES_save_key") or "").encode()
 
 def decrypt(encoded):
     encrypted = base64.b64decode(encoded)
